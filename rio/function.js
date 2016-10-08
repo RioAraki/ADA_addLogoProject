@@ -31,3 +31,14 @@ $('#pic1').change(function() {
   };
   fr.readAsDataURL(this.files[0]);
 });
+
+function downloadCanvas(link, canvasId, filename) {
+    console.log("in downloadcanvas");
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
+
+document.getElementById('download').addEventListener('click', function() {
+    console.log("in download");
+    downloadCanvas(this, 'myCanvas', 'test.png');
+}, false);
