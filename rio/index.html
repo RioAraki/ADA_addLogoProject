@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="function.js" type="text/javascript" async></script>
@@ -9,11 +10,36 @@
 
   <body>
     <h1>Add logo</h1>
+
+    <!-- SVG grah logo -->
+    <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+    	<g>
+    		<polygon class="st1" points="851.8,975.3 933.8,833.3 870.6,833.3 788.6,975.3" fill="#AAA9E0"/>
+    		<polygon class="st1" points="943.5,838.3 913.8,889.7 963.2,975.3 992.9,923.9" fill="#AAA9E0"/>
+    		<polygon class="st1" points="933.6,923.9 948.4,949.6 922.7,923.9 894.1,923.9 864.4,975.3 963.2,975.3 992.9,923.9" fill="#AAA9E0"/>
+    	</g>
+    </svg>
+    <!-- SVG graph logo -->
+
     <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas><br>
     <!-- <input type="file" id="pic1"><br> -->
     <input type="file" id="pic1" accept="image/*" capture="camera"><br>
     <button type="button" onclick="addImage()">Click Me to add first image!</button><br>
     <button type="button" onclick="add2Image()">Click Me to add second image!</button><br>
-    <button type="button" id="download">Click me to download</button>
+    <!-- <button type="button" id="download">Click me to download</button><br> -->
+    <a href="" download="canvas-image.png" id="canvas-download">Download as image</a><br>
+    <form>
+      <p>Choose the background color</p>
+      <input type="color" id="background">
+      <button type="submit">Submit</button>
+    </form>
+
+    <form>
+      <p>Choose the foreground color</p>
+      <input type="color" id="foreground">
+      <button type="submit">Submit</button>
+    </form>
+
   </body>
 </html>
