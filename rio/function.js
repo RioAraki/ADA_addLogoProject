@@ -25,7 +25,18 @@ $('#pic1').change(function() {
   fr.onload = function() {
     var img = new Image;
     img.onload = function() {
-      context.drawImage(img,0,0,500,500);
+        var sourceX = img.width/2 - canvas.width/2;
+        var sourceY = img.height/2 - canvas.height/2;
+        var sourceWidth = canvas.width;
+        var sourceHeight = canvas.height;
+        var destWidth = sourceWidth;
+        var destHeight = sourceHeight;
+        var destX = canvas.width / 2  - destWidth / 2;
+        var destY = canvas.height / 2 - destHeight / 2;
+        if(img.width < canvas.width || img.height < canvas.height ){
+          context.drawImage(img,0,0,500,500);
+        }else{context.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);};
+        
     }
     img.src = fr.result;
   };
