@@ -23,7 +23,7 @@ $('#pic1').change(function() {
   var fr = new FileReader;
 
   fr.onload = function() {
-    var img = new Image;
+    var img = canvas.toDataURL("image/png");
     img.onload = function() {
         var sourceX = img.width/2 - canvas.width/2;
         var sourceY = img.height/2 - canvas.height/2;
