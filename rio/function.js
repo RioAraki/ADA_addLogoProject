@@ -23,7 +23,7 @@ $('#pic1').change(function() {
   var fr = new FileReader;
 
   fr.onload = function() {
-    var img = new Image;
+    var img = canvas.toDataURL("image/png");
     img.onload = function() {
       context.drawImage(img,0,0,500,500);
     }
