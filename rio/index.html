@@ -22,13 +22,27 @@
     </svg> -->
     <!-- SVG graph logo -->
 
-    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas><br>
-    <!-- <input type="file" id="pic1"><br> -->
+    <!-- set canvas -->
+    <canvas id="myCanvas" width="1024" height="1024" style="border:1px solid #000000;"></canvas><br>
+    <!-- set canvas -->
+
+    <!-- upload image -->
     <input type="file" id="pic1" accept="image/*" capture="camera"><br>
-    <button type="button" onclick="addImage()">Click Me to add first image!</button><br>
-    <button type="button" onclick="add2Image()">Click Me to add second image!</button><br>
-    <!-- <button type="button" id="download">Click me to download</button><br> -->
-    <a href="" download="canvas-image.png" id="canvas-download">Download as image</a><br>
+    <!-- upload image -->
+
+    <!-- add logo and background-->
+    <button type="button" onclick="addBackground()">Add background!</button><br>
+    <button type="button" onclick="addLogo()">Add logo!</button><br>
+    <!-- add logo and background-->
+
+    <!-- result image -->
+    <img id="canvasImg" alt="Right click to save me!"></img><br>
+    <!-- result image -->
+
+    <!--download img -->
+    <button type="button" onclick="generateImage()">generate image</button><br>
+    <!--download img -->
+
     <form>
       <p>Choose the background color</p>
       <input type="color" id="background">
