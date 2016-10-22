@@ -8,7 +8,7 @@ function addImage() {
 }
 
 function add2Image() {
-  context.drawImage(imageObj2, 80, 90);
+    context.drawImage(imageObj2, 0, 280);
 }
 imageObj1.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
 imageObj2.src = 'http://canyongatedental.com/wp-content/uploads/2016/09/ADA-Logo-650x230.png';
@@ -23,7 +23,8 @@ $('#pic1').change(function() {
   var fr = new FileReader;
 
   fr.onload = function() {
-    var img = canvas.toDataURL("image/png");
+    //var img = canvas.toDataURL("image/png");
+    var img = new Image();
     img.onload = function() {
         var sourceX = img.width/2 - canvas.width/2;
         var sourceY = img.height/2 - canvas.height/2;
@@ -34,19 +35,19 @@ $('#pic1').change(function() {
         var destX = canvas.width / 2  - destWidth / 2;
         var destY = canvas.height / 2 - destHeight / 2;
         if(img.width < canvas.width || img.height < canvas.height ){
-          context.drawImage(img,0,0,500,500);
+            context.drawImage(img,0,0,500,500);
         }else{context.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);};
         
-    }
+    };
     img.src = fr.result;
   };
   fr.readAsDataURL(this.files[0]);
 });
 
 ////////////////////////////
-  var downloadImg = canvas.toDataURL("image/png");
-  download = document.getElementById('canvas-download');
-  download.addEventListener('click', function() {
-    var data = canvas.toDataURL();
+var downloadImg = canvas.toDataURL("image/png");
+download = document.getElementById('canvas-download');
+download.addEventListener('click', function() {
+    var data = downloadImg;
     download.href = data;
-  }, false);
+}, false);
