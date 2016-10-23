@@ -29,30 +29,22 @@ $('#pic1').change(function() {
         console.log(img.height); //800
         old_width = img.width;
         old_height = img.height;
-        new_width = img.width * r;
-        new_height = img.height * r;
         console.log(img.width); //800
         console.log(img.height); //500
         console.log(canvas.width); //500
         if(old_width > old_height){
             var sourceX = (old_width - canvas.width*r)/2; 
             var sourceY = 0;
-            var sourceWidth = canvas.width*r;
-            var sourceHeight = canvas.height*r;
-            var destWidth = canvas.width;
-            var destHeight = canvas.height;         
-            var destX = 0;
-            var destY = 0;
         }else{
             var sourceX = 0; 
             var sourceY = (old_height - canvas.height*r)/2;
-            var sourceWidth = canvas.width*r;
-            var sourceHeight = canvas.height*r;
-            var destWidth = canvas.width;
-            var destHeight = canvas.height;            
-            var destX = 0;
-            var destY = 0;  
         }
+        var sourceWidth = canvas.width*r;
+        var sourceHeight = canvas.height*r;
+        var destWidth = canvas.width;
+        var destHeight = canvas.height;         
+        var destX = 0;
+        var destY = 0;
         
         console.log(sourceX);//240
         console.log(sourceY);//150
